@@ -12,8 +12,7 @@
 
 # [if needed: helm uninstall --namespace gitlab gitlab-runner]
 
-
-## gitlab_runner_values.yml
+# gitlab_runner_values.yml
 gitlabUrl: "https://192.168.10.74/"
 runnerRegistrationToken: "GR1348941wTCs8VU19kxx45-bCfMa"
 executor: "kubernetes"
