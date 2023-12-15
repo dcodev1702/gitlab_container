@@ -1,5 +1,8 @@
 # Quick Setup!
 # ------------
+# Get gitlab runner registration token from GitLab 
+# -> Your Project -> Settings -> CI/CD -> Runner -> click virtical 3 dots -> copy 
+# Modify gitlabUrl & hostAliases as required
 # helm repo add gitlab https://charts.gitlab.io
 # helm repo update gitlab
 # kubectl create ns gitlab
@@ -8,6 +11,7 @@
 # helm install --namespace gitlab gitlab-runner -f ./gitlab_runner_values.yml gitlab/gitlab-runner
 
 # [if needed: helm uninstall --namespace gitlab gitlab-runner]
+
 
 ## gitlab_runner_values.yml
 gitlabUrl: "https://192.168.10.74/"
