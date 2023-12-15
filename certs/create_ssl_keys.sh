@@ -11,6 +11,7 @@
 # See https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309
 
 # variables
+GITLAB_HOME="$HOME/gitlab-container"
 name="Cloud Hunters Inc."
 base="cloudhunters.io"
 root="ca"
@@ -43,10 +44,22 @@ END
 )
 
 # Added by SWJ (uid0) -and DCODev1702 - 2023-12-14
-mkdir -p ../data
-mkdir -p ../logs
-mkdir -p ../config/ssl
-mkdir -p ../config/trusted-certs
+# Added by SWJ -and DCODev1702 - 2023-12-14
+if [ ! -d "$GITLAB_HOME/data" ]; then
+   mkdir -p "$GITLAB_HOME/data"
+fi
+
+if [ ! -d "$GITLAB_HOME/logs" ]; then
+   mkdir -p "$GITLAB_HOME/logs"
+fi
+
+if [ ! -d "$GITLAB_HOME/config/ssl" ]; then
+   mkdir -p "$GITLAB_HOME/config/ssl"
+fi
+
+if [ ! -d "$GITLAB_HOME/config/trusted-certs" ]; then
+   mkdir -p "$GITLAB_HOME/config/trusted-certs"
+fi
 
 cp "${root}.crt" ../config/trusted-certs/"${root}.crt"
 cp "${base}".crt ../config/ssl/"${myip}.crt"
