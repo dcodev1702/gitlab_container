@@ -3,12 +3,20 @@ A GitLab implementation using:
 * Docker Compose
 * Self-Signed SSL Certificates
 * GitLab Runner for CI/CD running in Kubernetes
+  * Kubernetes
+  * Helm
+  * KubeClt
 
 # GitLab Setup
 * Modify .env and docker-compose.yml as required
 ```console
 docker-compose up -d
 ```
+```console
+cat config/inital_root_password
+```
+* CHANGE YOUR PASSWORD!!!
+  
 
 # Configure & Run GitLab Runner for Kubernetes
   * Generate SSL Self-Signed Certificates from the "certs" directory
