@@ -43,6 +43,8 @@ END
 )
 
 # Added by SWJ (uid0) -and DCODev1702 - 2023-12-14
+mkdir -p ../data
+mkdir -p ../logs
 mkdir -p ../config/ssl
 mkdir -p ../config/trusted-certs
 
