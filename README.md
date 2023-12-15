@@ -1,2 +1,5 @@
-# gitlab_container
-A GitLab implementation using Docker Compose and Self-Signed SSL Certificates
+# GitLab Container (Docker Compose)
+A GitLab implementation using: 
+* Docker Compose
+* Self-Signed SSL Certificates
+* GitLab Runner for CI/CD
