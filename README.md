@@ -12,6 +12,8 @@ docker-compose up -d
 
 # Configure & Run GitLab Runner
   * [Must Read for Self-Signed SSL Certs](https://docs.gitlab.com/runner/configuration/tls-self-signed.html)
+    ![image](https://github.com/dcodev1702/gitlab_container/assets/32214072/d2369248-6ead-49d7-b784-f0d39a0667eb)
+
   * Acquire gitlab runner registration token from GitLab 
     * GOTO: Your Project -> Settings -> CI/CD -> Runner -> click virtical 3 dots -> copy / paste
     ![image](https://github.com/dcodev1702/gitlab_container/assets/32214072/ee161287-1e92-4572-8792-8677d213b6bc)
