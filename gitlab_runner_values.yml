@@ -1,0 +1,59 @@
+# Quick Setup!
+# ------------
+# helm repo add gitlab https://charts.gitlab.io
+# helm repo update gitlab
+# kubectl create ns gitlab
+# kubectl create -f gitlab_runner_configmap.yml
+# kubectl create -f fuse-device-plugin-k8s-1.16.yml
+# helm install --namespace gitlab gitlab-runner -f ./gitlab_runner_values.yml gitlab/gitlab-runner
+
+# [if needed: helm uninstall --namespace gitlab gitlab-runner]
+
+## gitlab_runner_values.yml
+gitlabUrl: "https://192.168.10.74/"
+runnerRegistrationToken: "GR1348941wTCs8VU19kxx45-bCfMa"
+executor: "kubernetes"
+nodeSelector:
+  worker: "true"
+hostAliases:
+- ip: "192.168.10.74"
+  hostnames:
+  - "dev.cloudhunters.io"
+  - "cloudhunters.io"
+  - "192.168.10.74"
+rbac:
+  create: true
+volumeMounts:
+- name: gitlab-runner-cm-vol
+  mountPath: /etc/ssl/kubernetes/
+  readOnly: true
+volumes:
+- name: gitlab-runner-cm-vol
+  configMap:
+    name: gitlab-runner-cm
+
+# Info on adding /dev/fuse to runners for buildah support without privileged execution
+# https://www.redhat.com/sysadmin/podman-inside-kubernetes
+# https://github.com/kuberenetes-learning-group/fuse-device-plugin/blob/master/README_EN.md
+# https://docs.gitlab.com/runner/executors/kubernetes.html#overwrite-generated-pod-specifications-alpha
+# THE [TLS-CA-FILE] OPTION IS A VERY IMPORTANT TO FILL OUT! THIS WILL NOT WORK, OTHERWISE!
+runners:
+  name: kubernetes-runner
+  tags: kubernetes,k3s,bind9
+  runUntagged: true
+  config: |
+    [[runners]]
+      tls-ca-file = "/etc/ssl/kubernetes/ca.crt"
+      environment = ["FF_USE_ADVANCED_POD_SPEC_CONFIGURATION=true"]
+      [runners.kubernetes]
+        tls_verify = false
+        [[runners.kubernetes.pod_spec]]
+          name = "build resources fuse"
+          patch = '''
+            containers:
+            - name: build
+              resources:
+                limits:
+                  github.com/fuse: 1
+          '''
+          patch_type = "strategic"
