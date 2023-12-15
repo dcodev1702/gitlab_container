@@ -2,7 +2,7 @@
 A GitLab implementation using: 
 * Docker Compose
 * Self-Signed SSL Certificates
-* GitLab Runner for CI/CD
+* GitLab Runner for CI/CD running in Kubernetes
 
 # GitLab Setup
 * Modify .env and docker-compose.yml as required
@@ -10,7 +10,7 @@ A GitLab implementation using:
 docker-compose up -d
 ```
 
-# Configure & Run GitLab Runner
+# Configure & Run GitLab Runner for Kubernetes
   * Generate SSL Self-Signed Certificates from the "certs" directory
     ![image](https://github.com/dcodev1702/gitlab_container/assets/32214072/69792fc5-8fec-49af-9b2f-dd24c4e64989)
 
@@ -46,6 +46,10 @@ docker-compose up -d
  ```console
  helm install --namespace gitlab gitlab-runner -f ./gitlab_runner_values.yml gitlab/gitlab-runner
  ```
+* If all goes as intended, you will have a Gitlab Runner successfully running in Kubernetes
+![image](https://github.com/dcodev1702/gitlab_container/assets/32214072/7f4e7dab-1824-4c6b-acb3-80707a8c21f9)
+
+![image](https://github.com/dcodev1702/gitlab_container/assets/32214072/1c7868bd-e44d-4212-bf04-73aeb5112771)
 
  ## Uninstall Helm Chart:
  * Required for troubleshooting
