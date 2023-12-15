@@ -8,6 +8,10 @@ A GitLab implementation using:
   * KubeClt
 
 # GitLab Setup
+## Create Self Signed SSL Certificates
+* Generate SSL Self-Signed Certificates from the "certs" directory
+    ![image](https://github.com/dcodev1702/gitlab_container/assets/32214072/e46a7872-62e5-44b3-a282-c45040d76274)
+
 * Modify .env and docker-compose.yml as required
 ```console
 docker-compose up -d
@@ -17,11 +21,7 @@ cat config/inital_root_password
 ```
 * CHANGE YOUR PASSWORD!!!
   
-
-# Configure & Run GitLab Runner for Kubernetes
-  * Generate SSL Self-Signed Certificates from the "certs" directory
-    ![image](https://github.com/dcodev1702/gitlab_container/assets/32214072/e46a7872-62e5-44b3-a282-c45040d76274)
-
+## Run GitLab Runner for Kubernetes
   * Copy / Paste ca.crt contents into gitlab_runner_configmap.yml
     ![image](https://github.com/dcodev1702/gitlab_container/assets/32214072/2c254641-2209-446b-b0f9-ea2358fc0b36)
 
