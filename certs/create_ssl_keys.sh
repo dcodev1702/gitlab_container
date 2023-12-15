@@ -44,7 +44,6 @@ END
 )
 
 # Added by SWJ (uid0) -and DCODev1702 - 2023-12-14
-# Added by SWJ -and DCODev1702 - 2023-12-14
 if [ ! -d "$GITLAB_HOME/data" ]; then
    mkdir -p "$GITLAB_HOME/data"
 fi
