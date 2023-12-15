@@ -1,0 +1,13 @@
+---
+# kubectl create|delete -f ./gitlab_runner_configmap.yml
+# kubectl get -n gitlab configmap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gitlab-runner-cm
+  namespace: gitlab
+data:
+  ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    !!!! PASTE CONTENTS OF CA.CRT HERE !!!!
+    -----END CERTIFICATE-----
