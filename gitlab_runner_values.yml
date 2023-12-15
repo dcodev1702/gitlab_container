@@ -1,5 +1,6 @@
 # Quick Setup!
 # ------------
+# Must Read for Self-Signed SSL Certs: https://docs.gitlab.com/runner/configuration/tls-self-signed.html
 # Get gitlab runner registration token from GitLab 
 # -> Your Project -> Settings -> CI/CD -> Runner -> click virtical 3 dots -> copy 
 # Modify gitlabUrl & hostAliases as required
@@ -39,6 +40,7 @@ volumes:
 # https://www.redhat.com/sysadmin/podman-inside-kubernetes
 # https://github.com/kuberenetes-learning-group/fuse-device-plugin/blob/master/README_EN.md
 # https://docs.gitlab.com/runner/executors/kubernetes.html#overwrite-generated-pod-specifications-alpha
+# !! READ ME!! -> https://docs.gitlab.com/runner/configuration/tls-self-signed.html
 # THE [TLS-CA-FILE] OPTION IS A VERY IMPORTANT TO FILL OUT! THIS WILL NOT WORK, OTHERWISE!
 runners:
   name: kubernetes-runner
