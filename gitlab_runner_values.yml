@@ -2,7 +2,7 @@
 # ------------
 # Must Read for Self-Signed SSL Certs: https://docs.gitlab.com/runner/configuration/tls-self-signed.html
 # Get gitlab runner registration token from GitLab 
-# -> Your Project -> Settings -> CI/CD -> Runner -> click virtical 3 dots -> copy 
+# GOTO: Your Project -> Settings -> CI/CD -> Runner -> click virtical 3 dots -> copy / paste
 # Modify gitlabUrl & hostAliases as required
 # helm repo add gitlab https://charts.gitlab.io
 # helm repo update gitlab
