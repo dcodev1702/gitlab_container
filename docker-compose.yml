@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  web:
+    image: 'gitlab/gitlab-ce:latest'
+    restart: always
+    hostname: 'localhost'
+    container_name: gitlab-ce
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://192.168.10.74'
+        registry_external_url 'https://192.168.10.74:5005'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+        letsencrypt['enable'] = false
+        nginx['redirect_http_to_https'] = true
+    ports:
+      - '80:80'
+      - '443:443'
+      - '2222:22'
+      - '5005:5005'
+    volumes:
+      - '$GITLAB_HOME/config:/etc/gitlab:Z'
+      - '$GITLAB_HOME/logs:/var/log/gitlab:Z'
+      - '$GITLAB_HOME/data:/var/opt/gitlab:Z'
+    networks:
+      - gitlab
+
+networks:
+  gitlab:
+    name: gitlab-network
