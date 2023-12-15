@@ -43,6 +43,9 @@ END
 )
 
 # Added by SWJ (uid0) -and DCODev1702 - 2023-12-14
+mkdir -p ../config/ssl
+mkdir -p ../config/trusted-certs
+
 cp "${root}.crt" ../config/trusted-certs/"${root}.crt"
 cp "${base}".crt ../config/ssl/"${myip}.crt"
 cat "${root}.crt" >> ../config/ssl/"${myip}.crt"
