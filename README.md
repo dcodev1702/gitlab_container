@@ -15,6 +15,8 @@ A GitLab implementation using:
 * Modify .env and docker-compose.yml as required
 ![image](https://github.com/dcodev1702/gitlab_container/assets/32214072/1a6cab95-7385-40c4-9731-c2c9138e37d1)
 
+![image](https://github.com/dcodev1702/gitlab_container/assets/32214072/391462bd-9869-4e98-913b-b47ea49ffa81)
+
 ```console
 docker-compose up -d
 ```
