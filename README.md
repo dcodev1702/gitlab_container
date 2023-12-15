@@ -23,7 +23,9 @@ docker-compose up -d
 ```console
 cat config/inital_root_password
 ```
-* CHANGE YOUR PASSWORD!!!
+
+* LOG IN TO GITLAB and CHANGE YOUR PASSWORD!! :)
+![image](https://github.com/dcodev1702/gitlab_container/assets/32214072/3f8154f9-ae5a-4e47-9022-35c9218492ad)
   
 ## Run GitLab Runner for Kubernetes
   * Copy / Paste ca.crt contents into gitlab_runner_configmap.yml
